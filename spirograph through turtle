@@ -1,0 +1,12 @@
+import turtle
+
+kbk=turtle.Turtle()
+turtle.bgcolor('black')
+kbk.speed(10000)
+
+for i in range(6):
+    turtle.speed(10)
+    for colours in ["red","magenta","cyan","blue","green","yellow","white"]:
+        turtle.color(colours)
+        turtle.circle(100)
+        turtle.left(10)
