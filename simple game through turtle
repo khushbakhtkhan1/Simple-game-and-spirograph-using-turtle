@@ -1,0 +1,54 @@
+import turtle
+import random
+import time
+screen=turtle.Screen()
+screen.bgcolor('lightcyan')
+player_one=turtle.Turtle()
+player_one.color('pink')
+player_one.shape('turtle')
+player_two=player_one.clone()
+player_two.color('blue')
+player_one.penup()
+player_one.goto(-300,200)
+player_two.penup()
+player_two.goto(-300,-200)
+player_one.goto(300,-225)
+player_one.left(90)
+player_one.pendown()
+player_one.color('black')
+player_one.forward(450)
+player_one.write('finish!',font=20)
+
+#allows to return to starting position
+
+player_one.penup()
+player_one.color('pink')
+player_one.goto(-300,200)
+player_one.right(90)
+
+player_one.pendown()
+player_two.pendown()
+
+#dice
+
+dice=[1,2,3,4,5,6]
+
+#creating the game
+
+for i in range(30):
+    if player_one.pos()>=(300,-225):
+        print('player 1 is winner')
+        break
+    elif player_two.pos()>=(300,-225):
+        print('player 1 is winner')
+        break
+    else:
+        dice_roll=random.choice(dice)
+        player_one.forward(30 * dice_roll)
+        time.sleep(1)
+        dice_roll=random.choice(dice)
+        player_two.forward(30 * dice_roll)
+        time.sleep(1)
+
+
+turtle.done()
